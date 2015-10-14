@@ -1,0 +1,17 @@
+------------------------------------------------------------
+Client connecting to 192.168.33.10, TCP port 5001
+TCP window size: 64.0 KByte (WARNING: requested 32.0 KByte)
+------------------------------------------------------------
+[  3] local 192.168.33.11 port 34931 connected with 192.168.33.10 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 3.0 sec   435 MBytes  1.22 Gbits/sec
+[  3]  3.0- 6.0 sec   425 MBytes  1.19 Gbits/sec
+[  3]  6.0- 9.0 sec   422 MBytes  1.18 Gbits/sec
+[  3]  9.0-12.0 sec   414 MBytes  1.16 Gbits/sec
+[  3] 12.0-15.0 sec   443 MBytes  1.24 Gbits/sec
+[  3] 15.0-18.0 sec   461 MBytes  1.29 Gbits/sec
+[  3] 18.0-21.0 sec   461 MBytes  1.29 Gbits/sec
+[  3] 21.0-24.0 sec   476 MBytes  1.33 Gbits/sec
+[  3] 24.0-27.0 sec   458 MBytes  1.28 Gbits/sec
+[  3] 27.0-30.0 sec   452 MBytes  1.26 Gbits/sec
+[  3]  0.0-30.0 sec  4.34 GBytes  1.24 Gbits/sec

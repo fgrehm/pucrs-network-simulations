@@ -1,0 +1,22 @@
+------------------------------------------------------------
+Client connecting to 192.168.33.10, UDP port 5001
+Sending 1470 byte datagrams
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.33.11 port 55573 connected with 192.168.33.10 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0- 3.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3]  3.0- 6.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3]  6.0- 9.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3]  9.0-12.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3] 12.0-15.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3] 15.0-18.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3] 18.0-21.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3] 21.0-24.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3] 24.0-27.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3] 27.0-30.0 sec  17.9 MBytes  50.0 Mbits/sec
+[  3]  0.0-30.0 sec   179 MBytes  50.0 Mbits/sec
+[  3] Sent 127661 datagrams
+[  3] Server Report:
+[  3]  0.0-30.1 sec   179 MBytes  49.9 Mbits/sec  20.726 ms   36/127659 (0.028%)
+[  3]  0.0-30.1 sec  125014 datagrams received out-of-order
