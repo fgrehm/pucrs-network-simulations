@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+if [[ -z "$1" ]]; then
+  echo "Usage: $0 OUTPUT_FILE_PREFIX"
+  exit 1
+fi
+
+output="$1"
+echo "====> $output"
+
+for bandwidth in 50k 1m 5m 10m 50m; do
+  echo "--> $bandwidth bandwidth"
+  iperf -c 192.168.33.10 -u -i 3 -t 30 -b $bandwidth &> "${output}-${bandwidth}.log"
+done

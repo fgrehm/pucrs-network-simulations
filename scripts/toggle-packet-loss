@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+if [[ -z "$1" ]]; then
+  echo "Usage: $0 on/off"
+  exit 1
+fi
+
+if [[ "$1" = 'on' ]]; then
+  sudo tc qdisc add dev eth1 root netem loss 5% 25%
+
+elif [[ "$1" = 'off' ]]; then
+  sudo tc qdisc del dev eth1 root netem
+
+else
+  echo 'Invalid toggle provided'
+  exit 1
+fi

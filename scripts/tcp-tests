@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+if [[ -z "$1" ]]; then
+  echo "Usage: $0 OUTPUT_FILE_PREFIX"
+  exit 1
+fi
+
+output="$1"
+echo "====> $output"
+
+for window in 1K 4K 8K 32K 128K; do
+  echo "--> $window window"
+  iperf -c 192.168.33.10 -i 3 -t 30 -w $window &> "${output}-${window}.log"
+done

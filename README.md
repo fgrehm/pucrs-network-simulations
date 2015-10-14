@@ -2,22 +2,66 @@
 
 Experimenting with networking conditions
 
-## Server
+## Start the VMs
+
+```sh
+vagrant up --provider=virtualbox
+```
+
+## TCP tests
+
+Start the server:
 
 ```sh
 vagrant ssh server -c 'iperf -s'
 ```
 
-## Client
+Log in into the client box:
 
 ```sh
 vagrant ssh client
+```
 
-# Baseline
-iperf -c 192.168.33.10 -i 1 -w 1K
+Capture data:
 
-# 100ms delay for network interface
-sudo tc qdisc add dev eth1 root netem delay 100ms
-iperf -c 192.168.33.10 -i 1 -w 1K
-sudo tc qdisc del dev eth1 root netem delay 100ms
+```sh
+cd /vagrant
+scripts/tcp-tests /vagrant/output/01-baseline-tcp && \
+
+scripts/toggle-variable-latency on \
+&& scripts/tcp-tests /vagrant/output/02-var-latency-tcp \
+&& scripts/toggle-variable-latency off && \
+
+scripts/toggle-packet-loss on \
+&& scripts/tcp-tests /vagrant/output/03-packet-loss-tcp \
+&& scripts/toggle-packet-loss off
+```
+
+## UDP tests
+
+Start the server:
+
+```sh
+vagrant ssh server -c 'iperf -s -u'
+```
+
+Log in into the client box:
+
+```sh
+vagrant ssh client
+```
+
+Capture data:
+
+```sh
+cd /vagrant
+scripts/udp-tests /vagrant/output/01-baseline-udp && \
+
+scripts/toggle-variable-latency on \
+&& scripts/udp-tests /vagrant/output/02-var-latency-udp \
+&& scripts/toggle-variable-latency off && \
+
+scripts/toggle-packet-loss on \
+&& scripts/udp-tests /vagrant/output/03-packet-loss-udp \
+&& scripts/toggle-packet-loss off
 ```
