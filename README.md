@@ -5,7 +5,7 @@ Experimenting with networking conditions
 ## Start the VMs
 
 ```sh
-vagrant up --provider=virtualbox
+vagrant up --no-parallel
 ```
 
 ## TCP tests
@@ -26,14 +26,14 @@ Capture data:
 
 ```sh
 cd /vagrant
-scripts/tcp-tests /vagrant/output/01-baseline-tcp && \
+scripts/tcp-tests /vagrant/output/01-baseline-tcp.csv && \
 
 scripts/toggle-variable-latency on \
-&& scripts/tcp-tests /vagrant/output/02-var-latency-tcp \
+&& scripts/tcp-tests /vagrant/output/02-var-latency-tcp.csv \
 && scripts/toggle-variable-latency off && \
 
 scripts/toggle-packet-loss on \
-&& scripts/tcp-tests /vagrant/output/03-packet-loss-tcp \
+&& scripts/tcp-tests /vagrant/output/03-packet-loss-tcp.csv \
 && scripts/toggle-packet-loss off
 ```
 
