@@ -10,10 +10,17 @@ fi
 output="$1"
 echo "====> $output"
 
+function ensure_prefix() {
+  while read line; do
+    echo "$1,$line" | cat -
+  done
+}
+
 echo -n >> $output
 for bandwidth in 50k 1m 5m 10m 50m; do
   echo "-----> $bandwidth bandwidth"
-  echo -n "$bandwidth," &>> $output
-  iperf -c 192.168.33.10 -u -t 30 -b $bandwidth --reportstyle c >> $output
+  iperf -c 192.168.0.10 -u -t 30 -b $bandwidth # --reportstyle c \
+    # | ensure_prefix $bandwidth \
+    # >> $output
   sleep 1
 done

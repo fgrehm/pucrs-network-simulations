@@ -26,15 +26,7 @@ Capture data:
 
 ```sh
 cd /vagrant
-scripts/tcp-tests /vagrant/output/01-baseline-tcp.csv && \
-
-scripts/toggle-variable-latency on \
-&& scripts/tcp-tests /vagrant/output/02-var-latency-tcp.csv \
-&& scripts/toggle-variable-latency off && \
-
-scripts/toggle-packet-loss on \
-&& scripts/tcp-tests /vagrant/output/03-packet-loss-tcp.csv \
-&& scripts/toggle-packet-loss off
+scripts/run-all-tcp-tests
 ```
 
 ## UDP tests
@@ -55,13 +47,7 @@ Capture data:
 
 ```sh
 cd /vagrant
-scripts/udp-tests /vagrant/output/01-baseline-udp && \
-
-scripts/toggle-variable-latency on \
-&& scripts/udp-tests /vagrant/output/02-var-latency-udp \
-&& scripts/toggle-variable-latency off && \
-
-scripts/toggle-packet-loss on \
-&& scripts/udp-tests /vagrant/output/03-packet-loss-udp \
-&& scripts/toggle-packet-loss off
+scripts/run-all-udp-tests
 ```
+
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -ex
+
+# scripts/tcp-tests output/01-baseline-tcp.csv
+
+# scripts/toggle-variable-latency on
+# scripts/tcp-tests output/02-var-latency-tcp.csv
+# scripts/toggle-variable-latency off
+
+scripts/toggle-packet-loss on
+scripts/tcp-tests output/03-packet-loss-tcp.csv
+scripts/toggle-packet-loss off

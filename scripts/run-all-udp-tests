@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -ex
+
+scripts/udp-tests output/01-baseline-udp.csv
+
+# scripts/toggle-variable-latency on
+# scripts/udp-tests output/02-var-latency-udp.csv
+# scripts/toggle-variable-latency off
+#
+# scripts/toggle-packet-loss on
+# scripts/udp-tests output/03-packet-loss-udp.csv
+# scripts/toggle-packet-loss off

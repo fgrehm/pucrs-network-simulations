@@ -12,8 +12,8 @@ echo "====> $output"
 
 echo -n >> $output
 for window in 1K 4K 8K 32K 128K; do
-  echo "-----> $window window"
+  echo "-----> $window window $(date)"
   echo -n "${window}," &>> $output
-  iperf -c 192.168.33.10 -t 30 -w $window --reportstyle c >> $output
+  iperf -c 192.168.0.10 -t 30 -w $window #--reportstyle c >> $output
   sleep 5
 done

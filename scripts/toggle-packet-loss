@@ -8,10 +8,10 @@ if [[ -z "$1" ]]; then
 fi
 
 if [[ "$1" = 'on' ]]; then
-  sudo tc qdisc add dev eth1 root netem loss 5% 25%
+  sudo tc qdisc add dev wlan0 root netem loss 10% 25%
 
 elif [[ "$1" = 'off' ]]; then
-  sudo tc qdisc del dev eth1 root netem
+  sudo tc qdisc del dev wlan0 root netem
 
 else
   echo 'Invalid toggle provided'
